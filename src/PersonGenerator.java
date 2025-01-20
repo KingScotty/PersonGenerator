@@ -7,13 +7,6 @@ public class PersonGenerator {
 
         Boolean done = false;
 
-/*
-        a.	ID (a String)
-        b.	FirstName
-        c.	LastName
-        d.	Title (a string like Mr., Mrs., Ms., Dr., etc.)
-        e.	YearOfBirth (an int)
-*/
         String personRec = "";
         String ID = "";
         String firstName = "";
@@ -22,16 +15,16 @@ public class PersonGenerator {
         int YOB = 0;
 
         do {
-ID = SafeInput.getNonZeroLenString(in, prompt: "Enter the ID [6 digits]: ");
-firstName = SafeInput.getMinLenString(in, prompt: "Enter the first name [>= 2 chars]: ", minLen: 2);
-lastName = SafeInput.getMinLenString(in, prompt: "Enter the last name [>= 2 chars]: ", minLen: 2);
-title = SafeInput.getNonZeroLenString(in, prompt: "Enter the title [>= 2 chars]: ");
-YOB = SafeInput.getRangedInt(in, prompt: "Enter the year of birth [1900-2020]: ", low: 1900, high: 2020);
+ID = SafeInput.getNonZeroLenString(in,  "Enter the ID [6 digits]: ");
+firstName = SafeInput.getNonZeroLenString( in,  "Enter the first name:" );
+lastName = SafeInput.getNonZeroLenString( in,  "Enter the last name: ");
+title = SafeInput.getNonZeroLenString(in,  "Enter the title ");
+YOB = SafeInput.getRangedInt(in,  "Enter the year of birth [1900-2020]: ", 1900, 2020);
 
 personRec = ID + "," + firstName + "," + lastName + "," + title + "," + YOB;
 folks.add(personRec);
 
-
+done = SafeInput.getYNConfirm(in,  "Another person (y/n)? ");
 
 
         } while(!done);
