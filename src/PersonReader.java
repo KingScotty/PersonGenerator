@@ -25,7 +25,7 @@ import java.util.Scanner;
                 if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
                     target = chooser.getSelectedFile().toPath();  // this is a File object not a String filename
                     // Print the header
-                    System.out.println(String.format("%-6s %-8s %-13s %-12s %-10s", "ID", "FirstName", "LastName", "Title", "YOB"));
+                    System.out.println(String.format("%-6s %-8s %-5s %-5s %-5s", "ID", "FirstName", "LastName", "Title", "YOB"));
                     System.out.println("-------------------------------------------------");
 
                     inFile = new Scanner(target);
@@ -51,4 +51,3 @@ import java.util.Scanner;
             }
         }
     }
-}
